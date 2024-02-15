@@ -1,0 +1,1 @@
+.container{display:flex;justify-content:center;gap:50px;margin-top:20%}.main-button{text-decoration:none;padding:8px 16px;border-radius:4px;background-color:beige;font-family:sans-serif;font-size:40px;color:#444040;transition:background-color .25s linear,color .35s linear}.main-button:hover{background-color:#c7d7e2;color:#fffefe}
