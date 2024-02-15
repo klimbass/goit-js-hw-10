@@ -57,7 +57,7 @@ button {
   content: '';
   width: 38px;
   height: 38px;
-  background-image: url('../img/javascript.svg');
+  background-image: url('../img/icon-error.svg');
   background-size: cover; /* або contain, залежно від потреб */
   background-repeat: no-repeat;
   position: absolute;
