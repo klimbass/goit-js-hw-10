@@ -1,0 +1,76 @@
+body {
+  box-sizing: border-box;
+}
+.buttonGoBack {
+  display: inline-block;
+  margin: 16px;
+  text-decoration: none;
+  background-color: beige;
+  font-family: sans-serif;
+  padding: 4px 8px;
+  color: #aaaaaa;
+  border-radius: 2px;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.buttonGoBack:hover {
+  background-color: rgb(228, 231, 243);
+  color: #ffffff;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 8px;
+  font-family: sans-serif;
+  /* background-color: rgb(229, 234, 234); */
+  padding: 8px;
+}
+input[name='delay'] {
+  height: 26px;
+  width: 236px;
+  padding: 0 4px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+form fieldset {
+  margin: 0;
+}
+button[type='submit'] {
+  padding: 4px;
+}
+
+.iziToast {
+  width: 250px !important;
+}
+
+.iziToast-fulfilled .iziToast-message::before {
+  content: '';
+  width: 38px;
+  height: 38px;
+  background-image: url('../img/icons8-done.svg');
+  background-size: cover; /* або contain, залежно від потреб */
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translate(0, -50%);
+}
+
+.iziToast-rejected .iziToast-message::before {
+  content: '';
+  width: 38px;
+  height: 38px;
+  background-image: url('../img/icons8-close.svg');
+  background-size: cover; /* або contain, залежно від потреб */
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translate(0, -50%);
+}
