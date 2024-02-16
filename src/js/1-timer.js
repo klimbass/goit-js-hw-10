@@ -17,9 +17,8 @@ const secondsHtml = document.querySelector('span[data-seconds]');
 
 function buttonStartDisabled() {
   buttonStart.disabled = true;
-  buttonStart.style.color = 'rgb(150, 149, 149)';
-  buttonStart.style.borderColor = 'rgb(189, 186, 186)';
-  buttonStart.removeEventListener('click', timerToGo);
+  buttonStart.classList.remove('enabled');
+  buttonStart.removeEventListener('click', startTimer);
 }
 
 function convertMs(ms) {
@@ -57,9 +56,8 @@ flatpickr(input, {
     userSelectedDate = selectedDates[0].getTime();
     if (userSelectedDate > Date.now()) {
       buttonStart.disabled = false;
-      buttonStart.style.color = '#000';
-      buttonStart.style.borderColor = '#000';
-      buttonStart.addEventListener('click', timerToGo);
+      buttonStart.classList.add('enabled');
+      buttonStart.addEventListener('click', startTimer);
     } else {
       iziToast.error({
         class: 'iziToast',
@@ -78,16 +76,16 @@ flatpickr(input, {
   },
 });
 
-function timerToGo() {
+function startTimer() {
   buttonStartDisabled();
   input.disabled = true;
   count = userSelectedDate - Date.now();
   timer = convertMs(count);
   setTime();
-  intervalNumber = setInterval(timerCounter, 1000, count);
+  intervalNumber = setInterval(updateTimer, 1000, count);
 }
 
-function timerCounter() {
+function updateTimer() {
   if (count > 999) {
     count -= 1000;
     timer = convertMs(count);
